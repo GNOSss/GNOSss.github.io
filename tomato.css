@@ -1,41 +1,48 @@
-/* Modern CSS Reset */
+/*
+* (*)에스터리스크는 모든 요소 가리킵니다.
+*/
+
+/* 브라우저 기본 적용 스타일 초기화 작업 */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: 0; /* 요소 내부 여백 조절  */
+  box-sizing: border-box; /* width와 height은 고정 border,padding은 내부로 설정 됩니다. */
+  margin: 0; /* 요소 외부 여백 조절 */
 }
 
 body {
   width: 100%;
 }
 
+/* 기본 텍스트 색상 설정 */
 .primary-color {
   color: #222;
 }
+
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* 링크의 밑줄 제거 */
+  color: inherit; /* 부모요소의 텍스트 색상을 물려 받음 */
 }
+
 ul,
 li {
-  list-style-type: none; /* 리스트(* or 숫자)를 지워준다 */
+  list-style-type: none; /* 리스트 기호(* or 숫자)를 지워준다 */
 }
 
 header {
   width: 1440px;
-  margin: 0 auto;
+  margin: 0 auto; /* 가운데 정렬 */
   height: 90px;
-  display: flex;
-  justify-content: space-between;
+  display: flex; /* 요소들을 수평이나 수직으로 정렬 ,  자식 요소들이 기본적으로 수평 정렬이 되도록 함 */
+  justify-content: space-between; /* 자식 요소들을 양 끝에 배치하고, 사이 공간을 일정하게 유지 */
 }
 
 .left-nav {
   height: 100%;
   background-color: white;
   display: flex; /* 수평 정렬  'one'에서 입력하면 자식애들이 적용 됨*/
-  align-items: center; /* 평평하게 정렬해줌 */
+  align-items: center; /* flex를 사용하여 수평정렬 후, y축을 평평하게 잡아줌*/
 }
 
 .left-nav .logo img {
@@ -48,40 +55,40 @@ header {
 
 .notice-button {
   background-color: #f5f1de;
-  border-radius: 500px;
-  opacity: 1;
-  padding: 8px 12px;
-  border: none;
+  border-radius: 500px; /* border 모서리를 둥글게 만들어 줌 */
+  opacity: 1; /* 투명도 설정 0부터 1까지 */
+  padding: 8px 12px; /* y축 , x축 */
+  border: none; /* 테두리 제거 */
   font-size: 21px;
   color: #4e4e4e;
 }
 
 .menubar-list {
   display: flex;
-  margin-left: 32px;
-  margin-right: 40px;
-  gap: 40px;
+  margin-left: 32px; /* 좌측 외부 간격 */
+  margin-right: 40px; /* 우측 외부 간격 */
+  gap: 40px; /* 자식 요소들 간의 간격 설정 */
 }
 
 .right-nav {
   height: 100%;
   display: flex;
-  align-items: center;
-  position: relative;
+  align-items: center; /* flex를 사용하여 수평정렬 후, y축을 평평하게 잡아줌*/
+  position: relative; /* [자기 자신의 기본 위치를 기준]으로 이동할 수 있도록 설정 */
 }
-
 .search-icon-button {
-  position: absolute;
+  position: absolute; /* relative 적용한 부모의 위치 안으로 이동함 */
   left: 8px;
 }
 
 .search-box {
   border-radius: 100px;
-  border: 2px solid #e24444;
+  border: 2px solid #e24444; /* 선의 굵기 , 선의 종류 , 선의 색상 */
   width: 264px;
   height: 40px;
-  padding: 6px 45px;
+  padding: 6px 45px; /* y축, x축 */
 
+  /* .search-box의 placeholder 요소를 가르켜 적용 */
   ::placeholder {
     color: #4e4e4e;
     font-size: 14px;
@@ -102,12 +109,15 @@ header {
   width: 100%;
   height: 586px;
   background: #eb6265;
-  position: relative;
+  position: relative; /* 포지션을 잡아줍니다 */
 }
 
 .main-banner-content-text {
-  position: absolute;
+  position: absolute; /* 해당 요소를 .main-banner 안으로 위치하게 합니다 */
   top: 50%;
+  /* 해당 요소를 수직 정렬해줍니다. translateY는 Y축으로 정렬합니다.
+  -50%는 해당 요소의 50%만큼 위로 이동한다는 뜻입니다. (음수값은 위로 이동) 
+  즉, top에서 50% 떨어트리면 거기서 다시 50%만큼 올립니다. (절반의 절반)*/
   transform: translateY(-50%);
   left: 196px;
 }
@@ -115,16 +125,16 @@ header {
 .main-banner-content-text h2 {
   font-size: 24px;
   color: white;
-  font-weight: normal;
-  line-height: 150%;
+  font-weight: normal; /* 폰트 굵기 조절 */
+  line-height: 150%; /* 글자 줄 간격 조절  */
 }
 
 .main-banner-content-text h3 {
   font-size: 48px;
   color: white;
-  font-weight: normal;
-  line-height: 130%;
-  margin-bottom: 32px;
+  font-weight: normal; /* 폰트 굵기 조절 */
+  line-height: 130%; /* 글자 줄 간격 조절  */
+  margin-bottom: 32px; /* 외부 요소와의 간격 조절 */
 }
 
 .main-banner-content-text-detail {
@@ -132,7 +142,8 @@ header {
   font-weight: normal;
   line-height: 150%;
   color: white;
-
+  /* 해당 요소의 자식 요소들은 <p>태그로 반복되어 있고
+  마지막<p>태그에 요소에 CSS적용하는 선택자(:last-child)입니다.*/
   :last-child {
     margin-bottom: 0;
   }
@@ -151,12 +162,12 @@ header {
   font-size: 20px;
   font-weight: normal;
   line-height: normal;
-  text-align: center;
+  text-align: center; /* 수평 정렬 */
   color: #f5f1de;
   background-color: #4a734e;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+  padding: 10px; /* 안쪽 여백 */
+  border-radius: 5px; /* 테두리 둥글게 */
+  border: none; /* 테투리 선 none */
   width: 160px;
   height: 52px;
 }
@@ -197,14 +208,17 @@ main .sub-banner p {
 }
 
 .bp-content-wrap {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; /* flexbox 레이아웃 적용 */
+  flex-wrap: wrap; /* 자식 요소들이 부모 요소의 너비를 초과할 경우, 다음 줄로 넘어가도록 설정 */
+  /* justify-content: 수평 정렬 방식을 설정
+  space-between: 자식 요소들 사이에 같은 간격을 두되, 
+  첫 번째 요소는 부모의 왼쪽 끝에, 마지막 요소는 부모의 오른쪽 끝에 배치 */
   justify-content: space-between;
 }
 
 .bp-content {
   margin-top: 40px;
-  max-width: 306px;
+  max-width: 306px; /* 텍스트가 306px 넘어가면 자동으로 줄 넘김 생성 */
 }
 
 .bp-content-card-img {
@@ -220,7 +234,7 @@ main .sub-banner p {
 .bp-content-info-info {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 16px; /* 자식간의 간격 지정 */
 }
 
 .bp-content-info-daybadge {
@@ -229,7 +243,10 @@ main .sub-banner p {
   background-color: #f9dada;
   display: flex;
   align-items: center; /*수직정렬*/
-  justify-content: center; /*수평정렬*/
+  /* justify-content: 수평 정렬 방식을 설정
+  space-between: 자식 요소들 사이에 같은 간격을 두되, 
+  첫 번째 요소는 부모의 왼쪽 끝에, 마지막 요소는 부모의 오른쪽 끝에 배치 */
+  justify-content: center;
   border-radius: 20px;
   gap: 6px;
   color: #e24444;
@@ -243,19 +260,20 @@ footer {
 }
 
 .footer-menu {
-  display: flex;
-  justify-content: space-between;
+  display: flex; /* .sitemap과 .footer-icons에 대한 수평 정렬 */
+  justify-content: space-between; /* .sitemap과 .footer-icons 수평 정렬 후 양 끝으로 정렬 */
   margin-bottom: 50px;
 }
 
 .sitemap {
-  display: flex;
+  display: flex; /* .sitemap의 ul태그가 3개 있음 이걸 수평 정렬 함 */
   gap: 88px;
 }
 
 .sitemap ul {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* 3개의 ul태그를 수직으로 다시 정렬함 */
+  flex-direction: column; /* Flex를 수평으로 재정렬 , 효율적 배치를 위해서 조정하게됨 */
+  /* 즉 gap을 사용하기 위해 위 2개의 문법을 사용했음 */
   gap: 24px;
 }
 

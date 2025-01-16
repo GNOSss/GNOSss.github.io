@@ -104,7 +104,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  transition: all 500ms ease;
+  transition: background-color 500ms ease;
 }
 
 .header--dark {
@@ -571,6 +571,7 @@ button:hover {
   }
 
   .header {
+    max-width: 100%; /* 넘치지 않도록 제한 */
     flex-direction: column;
     align-items: start;
     background-color: var(--color-primary);

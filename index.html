@@ -18,14 +18,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Jersey+15&display=swap" rel="stylesheet" />
+    <!--Typeit-->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/b5f7c0dac4.js" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Javascript -->
-    <script type="module" src="src/main.js" defer></script>
-    <script type="module" src="src/projects.js" defer></script>
-    <script type="module" src="src/active_menu.js" defer></script>
+    <script type="module" src="./src/main.js" defer></script>
+    <script type="module" src="./src/projects.js" defer></script>
+    <script type="module" src="./src/active_menu.js" defer></script>
+    <script type="module" src="./src/type.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -52,7 +55,9 @@
       <section id="home">
         <div class="home__container">
           <img class="home__avatar" src="images/profile.png" alt="Seungsoo's profile" />
-          <h2 class="home__title">Hello <br />I&#39;m <strong class="home__title--strong">Binary Digit</strong> Man</h2>
+          <h2 class="home__title" aria-label="Hello, I'm [SeungSoo];">
+            Hello <br />I&#39;m <strong class="home__title--strong"> [SeungSoo!]</strong> ;
+          </h2>
           <p class="home__description">gotta finance developer</p>
           <a class="home__contact" href="#contact">Contact me</a>
         </div>

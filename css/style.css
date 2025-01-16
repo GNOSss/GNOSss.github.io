@@ -564,6 +564,7 @@ button:hover {
 
 @media screen and (max-width: 768px) {
   .section {
+    width: 100%;
     padding: 4rem 2rem;
   }
 

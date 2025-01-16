@@ -98,7 +98,7 @@ button:hover {
   position: fixed;
   top: 0;
   background-color: transparent;
-  width: 100%;
+  width: 100dvw;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
